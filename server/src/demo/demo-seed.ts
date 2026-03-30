@@ -1,3 +1,4 @@
+import { seedIcelandTrip } from './iceland-seed';
 import bcrypt from 'bcryptjs';
 import Database from 'better-sqlite3';
 
@@ -273,7 +274,9 @@ function seedExampleTrips(db: Database.Database, adminId: number, demoId: number
 
   insertMember.run(t3, demoId, adminId);
 
-  console.log('[Demo] 3 example trips seeded and shared with demo user');
+  seedIcelandTrip(db, adminId, demoId);
+  
+    console.log('[Demo] 4 example trips seeded and shared with demo user');
 }
 
 export { seedDemoData };
